@@ -1,38 +1,76 @@
-# Main tasks that are left
-- Fix how different parts are floating
-- Platform height needs to take into consideration height of jump
-- The instructions in the wrong place
-- The platforms do not lead to the doors
+# 🔥💧 Fireboy & Watergirl — Speed Coding Challenge
 
-# To test the game:
-- Open a terminal in /Users/rion/Desktop/Github/15113-hw7
-- Run python3 -m http.server 8000
-- Visit http://localhost:8000 in your web browser.
+> **Course Project:** 15-113 | Carnegie Mellon University (CMU)  
+> **Challenge Format:** 45-Minute In-class Coding Challenge + Code Handoff  
 
---------
+---
 
-# General vision for project
-Recreate the game fireboy and Watergirl. 
-Core Gameplay Mechanics: Each character is immune to their own element but instantly dies if they touch the opposing one.
-- Fireboy: Can walk through lava/fire pools.Dies instantly if he touches water
-- Watergirl: Can walk through water/ice pools.Dies instantly if she touches lava.
-- The Green Ooze: Both characters die if they touch the toxic green chemical pits.
+## 📌 Project Overview & Context
 
-## Controls & Movement
-The game is designed for "couch co-op" on a single keyboard, with each character having a dedicated set of keys:
-- Fireboy: left and right arrow keys to move left and right. Up arrow to jump. 
-- Watergirl: A and D keys to move left and right. W key to jump
+This project was built as part of an in-class exercise at **Carnegie Mellon University**. 
 
-## The Goal
-Both characters must reach their respective doors (marked with "F" for Fire and "W" for Water) at the exit of the level. If one character dies, the level immediately fails and must be restarted from the beginning.
+We were to recreate the classic two-player puzzle-platformer **Fireboy & Watergirl** as a way to practice **rapid prototyping** under strict time constraints (~45 minutes), and preparing code for an effective handoff so a peer developer could seamlessly read, understand, and build upon another person's codebase.
 
-The final score is determined by three factors:
-- Did both characters survive?
-- Did you collect all gems?
-- How fast did you finish? (based on the clock counting upwards at the top middle of the screen)
+---
 
-## Key Features & Puzzle Elements
-The "Temples" are filled with mechanical obstacles that require coordinated timing:
-- Levers and Buttons: One character must stand on a button or hold a lever (stand by the lever) to keep a door open while the other passes through. Levers will stay in place after you pull them, but buttons will not.
-- Moving Platforms: These are controlled by pulleys. One character needs to stand on one side of a lift to weigh it down so that the other can reach a higher ledge.
-- Gems: Levels contain red gems (for Fireboy) and blue gems (for Watergirl). While optional for finishing the level, collecting them is required to earn the "A" rank.
+## 🚀 How to Run & Test the Game
+
+1. **Open a terminal** in the project root directory:
+   ```bash
+   cd /Users/rion/Desktop/Github/15113-hw7
+   ```
+
+2. **Start a local HTTP server** using Python:
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+3. **Open your browser** and navigate to:
+   ```text
+   http://localhost:8000
+   ```
+
+---
+
+## 🎮 Game Vision & Mechanics
+
+### Core Concept
+A two-player maze game. Each character has distinct elemental traits and must work together to complete the level.
+
+* **🔥 Fireboy:** Immune to lava/fire pools, but dies instantly upon touching water.
+* **💧 Watergirl:** Immune to water/ice pools, but dies instantly upon touching lava.
+* **☣️ Toxic Green Ooze:** Deadly to both characters upon contact.
+
+### 🕹️ Controls
+
+| Character | Left | Right | Jump |
+| :--- | :--- | :--- | :--- |
+| **Fireboy** | `Left Arrow` | `Right Arrow` | `Up Arrow` |
+| **Watergirl** | `A` | `D` | `W` |
+
+### 🎯 Win & Loss Conditions
+* **Goal:** Both characters must navigate hazards, solve puzzles, and reach their designated exit doors (**F** for Fireboy, **W** for Watergirl).
+* **Failure:** If either character dies, the level immediately fails and must be restarted.
+* **Scoring Factors:**
+  * Survival of both characters.
+  * Number of gems collected (Red gems for Fireboy, Blue gems for Watergirl).
+  * Completion speed (tracked by timer at the top center).
+
+---
+
+## 🧩 Key Features & Puzzle Elements
+
+* **Levers & Buttons:** Require co-op coordination. Buttons must be held down continuously to keep doors open, whereas levers stay locked in place once flipped.
+* **Moving Platforms & Pulleys:** Platforms configured so one player's weight lowers or raises paths for their partner.
+* **Elemental Gems:** Optional collectibles scattered across the map needed to achieve an **A-rank**.
+
+---
+
+## 📝 Remaining Handoff Tasks & Backlog
+
+Because this prototype was developed under a 45-minute sprint, the following items remain open for the next contributor:
+
+* [ ] Fix alignment/positioning of floating map elements.
+* [ ] Adjust platform heights to match maximum jump trajectory.
+* [ ] Relocate instructional text overlay to a cleaner location.
+* [ ] Ensure all platform paths seamlessly connect and lead to the exit doors.
